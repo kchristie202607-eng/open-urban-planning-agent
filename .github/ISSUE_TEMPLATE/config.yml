@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 安全漏洞（请勿公开报告）
+    url: https://github.com/kchristie202607-eng/open-urban-planning-agent/security/advisories/new
+    about: 按 SECURITY.md 私下提交安全报告
+  - name: 行为准则问题
+    url: mailto:maintainer@example.com
+    about: 举报行为准则相关事宜

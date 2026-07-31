@@ -1,0 +1,36 @@
+name: 功能建议 / Feature Request
+description: 为公共框架提出改进建议（不扩展产品范围）
+title: "[Feature] "
+labels: ["enhancement", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        请说明建议如何**巩固开源可用性与维护性**，而非扩展产品范围。
+  - type: textarea
+    id: problem
+    attributes:
+      label: 问题背景
+      description: 当前公共组件缺少什么能力或有什么痛点？
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 建议方案
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: 范围与边界
+      description: 该建议如何保持"公共框架 / 私有知识"的边界、不触及私有数据？
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: 隐私确认
+      options:
+        - label: 本建议不涉及任何私有规划数据的处理或上传
+          required: true

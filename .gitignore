@@ -1,0 +1,44 @@
+# ===== OUPAP .gitignore =====
+# Goal: keep the repository PUBLIC and FREE of any private / confidential content.
+# Public framework only. Project data, knowledge bases, and credentials never leave the machine.
+
+# ---- Private / sensitive (MUST NOT be published) ----
+data/                  # knowledge base sqlite + processed chunks (private)
+output/                # generated planning deliverables (project-specific)
+project_state/         # current project state artifacts
+backups/               # snapshots
+tmp/                   # working files
+.workbuddy/            # agent/local memory
+.deps/                 # local python environment (3rd-party licenses only)
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ---- Secrets / environment ----
+.env
+*.key
+*.pem
+secrets.json
+credentials.json
+
+# ---- OS / editor ----
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# ---- Large binaries / models ----
+*.onnx
+*.bin
+*.pt
+*.pth
