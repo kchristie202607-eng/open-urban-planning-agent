@@ -1,0 +1,52 @@
+{
+  "project_id": "demo-old-town-01",
+  "project_name": "山地老城更新示范片区",
+  "location": "贵州省某市中心城区",
+  "planning_intents": [
+    "老旧小区改造",
+    "完整社区补短板",
+    "历史文化保护传承",
+    "存量产业空间活化"
+  ],
+  "site": {
+    "area_m2": 200000,
+    "existing_gfa_m2": 180000,
+    "renovation_gfa_m2": 120000,
+    "population": 8200,
+    "boundary_geojson": {
+      "type": "Feature",
+      "properties": {"name": "示范边界", "coordinate_note": "本地平面坐标，单位米"},
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[0, 0], [500, 0], [500, 400], [0, 400], [0, 0]]]
+      }
+    }
+  },
+  "controls": {
+    "target_far": 1.8,
+    "max_far": 2.2,
+    "max_building_density": 0.35,
+    "min_green_ratio": 0.25,
+    "public_space_ratio": 0.22,
+    "average_storey_height_m": 3.3,
+    "parking_spaces_per_1000m2": 6,
+    "source_status": "model_assumption"
+  },
+  "program_mix": {
+    "居住": 0.55,
+    "商业服务": 0.12,
+    "产业办公": 0.15,
+    "公共服务": 0.1,
+    "文化与社区运营": 0.08
+  },
+  "cost_assumptions": {
+    "new_construction_yuan_m2": 5200,
+    "renovation_yuan_m2": 1800,
+    "public_space_yuan_m2": 900,
+    "other_cost_ratio": 0.12,
+    "contingency_ratio": 0.08,
+    "direct_value_yuan_m2": 8500,
+    "revenue_realization_ratio": 0.62
+  }
+}
+

@@ -1,0 +1,143 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "片区策划项目输入",
+  "type": "object",
+  "required": [
+    "project_id",
+    "project_name",
+    "location",
+    "planning_intents",
+    "site",
+    "controls",
+    "program_mix",
+    "cost_assumptions"
+  ],
+  "properties": {
+    "project_id": {"type": "string", "minLength": 1},
+    "project_name": {"type": "string", "minLength": 1},
+    "location": {"type": "string"},
+    "planning_intents": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string"}
+    },
+    "site": {
+      "type": "object",
+      "required": ["area_m2"],
+      "properties": {
+        "area_m2": {"type": "number", "exclusiveMinimum": 0},
+        "existing_gfa_m2": {"type": "number", "minimum": 0},
+        "renovation_gfa_m2": {"type": "number", "minimum": 0},
+        "population": {"type": "integer", "minimum": 0},
+        "boundary_geojson": {"type": ["object", "null"]}
+      }
+    },
+    "controls": {
+      "type": "object",
+      "required": [
+        "target_far",
+        "max_far",
+        "max_building_density",
+        "min_green_ratio",
+        "public_space_ratio",
+        "average_storey_height_m",
+        "parking_spaces_per_1000m2"
+      ],
+      "properties": {
+        "target_far": {"type": "number", "minimum": 0},
+        "max_far": {"type": "number", "exclusiveMinimum": 0},
+        "max_building_density": {"type": "number", "minimum": 0, "maximum": 1},
+        "min_green_ratio": {"type": "number", "minimum": 0, "maximum": 1},
+        "public_space_ratio": {"type": "number", "minimum": 0, "maximum": 1},
+        "average_storey_height_m": {"type": "number", "exclusiveMinimum": 0},
+        "parking_spaces_per_1000m2": {"type": "number", "minimum": 0},
+        "source_status": {
+          "enum": ["verified_constraint", "model_assumption"]
+        }
+      }
+    },
+    "program_mix": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {"type": "number", "minimum": 0}
+    },
+    "cost_assumptions": {
+      "type": "object",
+      "required": [
+        "new_construction_yuan_m2",
+        "renovation_yuan_m2",
+        "public_space_yuan_m2",
+        "other_cost_ratio",
+        "contingency_ratio",
+        "direct_value_yuan_m2",
+        "revenue_realization_ratio"
+      ],
+      "properties": {
+        "new_construction_yuan_m2": {"type": "number", "minimum": 0},
+        "renovation_yuan_m2": {"type": "number", "minimum": 0},
+        "public_space_yuan_m2": {"type": "number", "minimum": 0},
+        "other_cost_ratio": {"type": "number", "minimum": 0},
+        "contingency_ratio": {"type": "number", "minimum": 0},
+        "direct_value_yuan_m2": {"type": "number", "minimum": 0},
+        "revenue_realization_ratio": {"type": "number", "minimum": 0, "maximum": 1}
+      }
+    },
+    "visual_requirements": {
+      "type": "object",
+      "properties": {
+        "satellite_basemap_required": {"type": "boolean", "default": true},
+        "source_crs": {"type": "string"},
+        "display_crs": {"type": "string", "default": "EPSG:3857"},
+        "preserve_aspect_ratio": {"const": true},
+        "allow_nonuniform_scaling": {"const": false},
+        "aspect_ratio_tolerance": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 0.000001
+        },
+        "required_map_elements": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "network_photos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "section",
+              "object_name",
+              "source_page",
+              "source_url",
+              "retrieved_at",
+              "usage_rights_status"
+            ],
+            "properties": {
+              "section": {"type": "string"},
+              "object_name": {"type": "string"},
+              "source_page": {"type": "string"},
+              "source_url": {"type": "string", "format": "uri"},
+              "retrieved_at": {"type": "string", "format": "date"},
+              "usage_rights_status": {
+                "enum": ["cleared", "citation_only", "needs_review", "restricted"]
+              },
+              "field_shotlist": {
+                "type": "object",
+                "properties": {
+                  "location": {"type": "string"},
+                  "view_direction": {"type": "string"}
+                },
+                "additionalProperties": false
+              },
+              "location_match_status": {
+                "enum": ["confirmed", "needs_review", "rejected"]
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

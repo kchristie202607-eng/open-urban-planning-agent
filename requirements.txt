@@ -1,0 +1,6 @@
+# Core OUPAP framework has no third-party runtime dependencies for the
+# workflow engine, knowledge index, and visual-quality checks exercised by CI.
+#
+# To BUILD the knowledge base from PDFs (src/build_kb.py) install the optional
+# dependencies listed in requirements-kb.txt:
+#     pip install -r requirements-kb.txt

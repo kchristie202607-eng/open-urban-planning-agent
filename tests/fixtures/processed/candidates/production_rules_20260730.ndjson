@@ -1,0 +1,2 @@
+{"item_id": "PR-C-000", "document_id": "production_rules_20260730", "knowledge_base": "C", "rule_category": "quality_gate", "mandatory_level": "mandatory", "evidence": {"pdf_page": 2, "text": "合成候选校验：等比例投影视口。"}, "confidence": 0.9, "review_status": "已复核"}
+{"item_id": "PR-C-001", "document_id": "production_rules_20260730", "knowledge_base": "C", "rule_category": "quality_gate", "mandatory_level": "mandatory", "evidence": {"pdf_page": 3, "text": "合成候选校验：等比例投影视口。"}, "confidence": 0.9, "review_status": "已复核"}

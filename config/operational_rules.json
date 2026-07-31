@@ -1,0 +1,254 @@
+{
+  "document_id": "production_rules_20260730",
+  "knowledge_base": "C",
+  "title": "片区体检与片区策划成果生产规范（2026-07-30更新）",
+  "document_status": "内部工作规范",
+  "effective_date": "2026-07-30",
+  "rules": [
+    {
+      "rule_id": "C-VIS-001",
+      "category": "区位制图",
+      "severity": "必须",
+      "requirement": "区位条件图应优先采用GIS卫星影像底图，叠加本次片区边界、主要道路、水系、对外联系、指北针、比例尺、区位小插图及底图署名。",
+      "validator": "location_map_components"
+    },
+    {
+      "rule_id": "C-VIS-002",
+      "category": "比例与投影",
+      "severity": "禁止",
+      "requirement": "禁止将卫星影像、GIS矢量或区位小插图分别进行非等比例拉伸。应先按成图画布宽高比扩展投影视口，再统一映射底图和矢量图层。",
+      "validator": "uniform_projection_transform"
+    },
+    {
+      "rule_id": "C-VIS-003",
+      "category": "比例与投影",
+      "severity": "必须",
+      "requirement": "卫片图应记录源坐标系、显示投影、成图宽高、投影视口宽高比和比例误差。投影视口与画布宽高比相对误差应不大于1e-6。",
+      "validator": "map_aspect_ratio_error"
+    },
+    {
+      "rule_id": "C-VIS-004",
+      "category": "专题图生产",
+      "severity": "必须",
+      "requirement": "体检各小节应优先插入已有正式图纸；无正式图纸时，优先利用现有GIS数据生成建筑年代、人口、公服、公共空间、交通、问题和潜力等专题图。",
+      "validator": "figure_source_priority"
+    },
+    {
+      "rule_id": "C-EVI-005",
+      "category": "网络照片",
+      "severity": "必须",
+      "requirement": "网络照片只能作为现状调查线索，必须记录对象名称、来源页面、来源网址、检索日期，并标注待现场复核；不得直接作为现状定案证据。",
+      "validator": "network_photo_provenance"
+    },
+    {
+      "rule_id": "C-EVI-006",
+      "category": "网络照片",
+      "severity": "禁止",
+      "requirement": "不得使用同名异地、无法确认对象、仅有营销效果图或来源不明的图片替代片区现状照片。",
+      "validator": "photo_location_match"
+    },
+    {
+      "rule_id": "C-VIS-007",
+      "category": "资料缺口",
+      "severity": "必须",
+      "requirement": "无法可靠生成的土地用途与权属、历史文化、地下管网、更新意愿等图纸，应设置规范化预留图框，并明确所需资料、建议比例尺、表达要素和待补状态。",
+      "validator": "placeholder_drawing_brief"
+    },
+    {
+      "rule_id": "C-EVI-008",
+      "category": "证据分级",
+      "severity": "必须",
+      "requirement": "所有插图应标记为已有正式图纸、GIS数据生成图、网络线索照片或制图任务预留图四类之一，并分别采用相应证据等级。",
+      "validator": "visual_evidence_class"
+    },
+    {
+      "rule_id": "C-QA-009",
+      "category": "成果质检",
+      "severity": "必须",
+      "requirement": "交付前应逐张检查专题图，并渲染检查文档页面；渲染器不可用时，必须执行Word实际打开、页数、图片数、图题和文件结构检查，并在交付说明中披露未完成的渲染检查。",
+      "validator": "document_visual_qa"
+    },
+    {
+      "rule_id": "C-WF-010",
+      "category": "工作流",
+      "severity": "必须",
+      "requirement": "工作流应输出visual_workplan.json，逐图记录所属小节、图件类型、数据来源、生产方式、证据状态、待补资料和质检状态。",
+      "validator": "visual_workplan_output"
+    },
+    {
+      "rule_id": "C-VIS-011",
+      "category": "坐标与比例",
+      "severity": "必须",
+      "requirement": "叠加卫片与GIS矢量前必须识别源坐标系并记录转换链路；源坐标系未知、边界套合异常或转换依据不明时不得正式出图。比例尺必须依据成图投影和中心纬度计算，不得按图片像素主观标注。",
+      "validator": "crs_and_scale_provenance"
+    },
+    {
+      "rule_id": "C-EVI-012",
+      "category": "网络照片",
+      "severity": "必须",
+      "requirement": "网络照片除来源和检索日期外，还应记录使用权限或版权风险说明，并转化为现场补拍对象、点位和拍摄方向清单。",
+      "validator": "photo_rights_and_field_shotlist"
+    },
+    {
+      "rule_id": "C-VIS-013",
+      "category": "数据源优先级",
+      "severity": "必须",
+      "requirement": "规划分析图应优先使用法定规划数据库、测绘成果、GDB、CAD和规划道路中心线；只有在无可用矢量数据且图纸可可靠配准时，才可从JPG、PNG、PDF或PSD逐点矢量化。",
+      "validator": "authoritative_source_priority"
+    },
+    {
+      "rule_id": "C-VIS-014",
+      "category": "图纸配准",
+      "severity": "必须",
+      "requirement": "无坐标图纸配准时应记录不少于4个分布均匀的控制点、变换模型、残差及单位；控制点不足、残差异常或套合不稳定时不得用于正式量算和出图。",
+      "validator": "georeferencing_evidence"
+    },
+    {
+      "rule_id": "C-VIS-015",
+      "category": "矢量质量",
+      "severity": "必须",
+      "requirement": "规划范围、用地、道路、建筑、设施、生态资源、限制地块和问题点位应分层建库，并完成几何有效性、重复、缝隙、重叠、悬挂线和边界衔接检查。",
+      "validator": "vector_topology_check"
+    },
+    {
+      "rule_id": "C-VIS-016",
+      "category": "问题图表达",
+      "severity": "必须",
+      "requirement": "问题分析图只标注存在问题的对象，背景和非问题对象降级表达，不得以参检数据或数据识别过程替代问题结论。",
+      "validator": "problem_only_content"
+    },
+    {
+      "rule_id": "C-VIS-017",
+      "category": "潜力与生态图表达",
+      "severity": "必须",
+      "requirement": "更新潜力图中限制地块采用边界与网格填充，存量建筑和存量空间采用点位；生态资源图重点表达河流、水体、体育公园和上位规划绿地，不以一般公共空间数量替代生态资源。",
+      "validator": "potential_ecology_symbology"
+    },
+    {
+      "rule_id": "C-VIS-018",
+      "category": "可编辑成果",
+      "severity": "必须",
+      "requirement": "道路交通分析图应另行输出单页可编辑PPTX，线、点、标签、箭头、图例和标题可分别调整；其他专题图优先同步保留SVG或矢量PDF。",
+      "validator": "editable_map_output"
+    },
+    {
+      "rule_id": "C-QA-019",
+      "category": "图件清单",
+      "severity": "必须",
+      "requirement": "每张规划分析图必须建立map_manifest.json条目，记录图号、图名、正文小节、来源图层、坐标系、画布、投影视口、输出文件和质量检查状态。",
+      "validator": "map_manifest_output"
+    },
+    {
+      "rule_id": "C-QA-020",
+      "category": "局部渲染",
+      "severity": "必须",
+      "requirement": "成果修改后仅对本轮编辑图纸及其所在文档页面执行局部渲染检查，并记录检查页码、图号与结论。",
+      "validator": "edited_pages_render_qa"
+    },
+    {
+      "rule_id": "C-SURV-021",
+      "category": "片区调查结构",
+      "severity": "必须",
+      "requirement": "第二章统一使用“片区调查”，按2.1现状概况、2.2问题调查、2.3资源调查、2.4意愿调查组织；2.2末尾设置片区体检评估。",
+      "validator": "chapter2_required_structure"
+    },
+    {
+      "rule_id": "C-SURV-022",
+      "category": "成果表达",
+      "severity": "禁止",
+      "requirement": "成果正文不得出现GIS识别、台账识别、数据逻辑、资料不完整、脚本模型算法等内部处理过程表达；内部证据层仍须保留来源、口径、计算和复核状态。",
+      "validator": "public_prose_internal_provenance_separation"
+    },
+    {
+      "rule_id": "C-SURV-023",
+      "category": "结论组织",
+      "severity": "必须",
+      "requirement": "片区调查各小节按现状、问题、更新响应组织，阶段性结论直接写入相应章节，不建立结论索引。",
+      "validator": "direct_section_conclusions"
+    },
+    {
+      "rule_id": "C-SURV-024",
+      "category": "住房体检",
+      "severity": "必须",
+      "requirement": "住房问题总结应突出长恒花园一小区和二小区，形成住房修缮、管网更新、适老化、停车充电、公共空间与物业管理一体化项目线索。",
+      "validator": "changheng_priority_package"
+    },
+    {
+      "rule_id": "C-SURV-025",
+      "category": "资源调查",
+      "severity": "必须",
+      "requirement": "资源调查设置闲置低效用地与建筑、公产资源权属摸底、生态资源三个小节，不设置历史文化资源小节。",
+      "validator": "resource_section_scope"
+    },
+    {
+      "rule_id": "C-SURV-026",
+      "category": "公共资产",
+      "severity": "必须",
+      "requirement": "公共资产权属摸底实行一产一档，并将遵义市产品质量检验检测院作为独立公共资产单元，记录宗地、房屋、管理、经营、抵押、租赁、手续和开放条件。",
+      "validator": "public_asset_one_record"
+    },
+    {
+      "rule_id": "C-SURV-027",
+      "category": "生态资源",
+      "severity": "必须",
+      "requirement": "生态资源分析图应表达水系、滨水岸线、体育公园、片区绿地及上位规划绿地，不得以一般公共空间数量替代生态资源。",
+      "validator": "ecology_figure_required"
+    },
+    {
+      "rule_id": "C-SURV-028",
+      "category": "图表编号",
+      "severity": "必须",
+      "requirement": "图号和表号应连续、唯一并与正文引用一致；不得存在缺号、重复号或图表实际顺序与编号不一致。",
+      "validator": "figure_table_number_sequence"
+    },
+    {
+      "rule_id": "C-SURV-029",
+      "category": "图名位置",
+      "severity": "必须",
+      "requirement": "图纸名称置于对应图片下方，图片与图名保持同页跟随，不得跨页分离。",
+      "validator": "caption_below_figure"
+    },
+    {
+      "rule_id": "C-SURV-030",
+      "category": "用地统计",
+      "severity": "必须",
+      "requirement": "面积不大于0.01公顷的零碎用地图斑归并入相邻同类或主导用地，内部保留归并对象、面积和归并去向记录。",
+      "validator": "tiny_land_parcel_merge_log"
+    },
+    {
+      "rule_id": "C-SURV-031",
+      "category": "意愿调查",
+      "severity": "必须",
+      "requirement": "居民、商户产权人、医院及企事业单位调查结论应与问卷对象、题目和比例一一对应；样本量与口径保留在内部证据层。",
+      "validator": "survey_claim_traceability"
+    },
+    {
+      "rule_id": "C-SURV-032",
+      "category": "版本管理",
+      "severity": "必须",
+      "requirement": "片区调查编辑应锁定唯一主稿，历史版本只读保留；每轮更新采用非覆盖版本并同步项目状态文件。",
+      "validator": "single_master_version"
+    },
+    {
+      "rule_id": "C-SURV-033",
+      "category": "实质调查",
+      "severity": "禁止",
+      "requirement": "不得以既有城市体检成果替代本次片区实质调查；既有数据只作为调查底板、问题线索和复核依据。",
+      "validator": "substantive_area_survey"
+    },
+    {
+      "rule_id": "C-SURV-034",
+      "category": "跨成果一致性",
+      "severity": "必须",
+      "requirement": "用地、人口、建筑、问题、资源和意愿指标在正文、表格、图例和内部状态文件中应采用同一值、单位和统计口径。",
+      "validator": "chapter2_cross_artifact_consistency"
+    },
+    {
+      "rule_id": "C-SURV-035",
+      "category": "项目进程",
+      "severity": "必须",
+      "requirement": "第二章每轮工作应更新章节状态、已完成成果、待复核项、待补资料、责任Agent、优先级和验收标准。",
+      "validator": "chapter2_progress_register"
+    }
+  ]
+}

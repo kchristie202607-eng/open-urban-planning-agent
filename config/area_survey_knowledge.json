@@ -1,0 +1,32 @@
+{
+  "document_id": "area_survey_knowledge_public",
+  "knowledge_base": "C",
+  "title": "片区调查通用知识（合成公开版）",
+  "document_status": "synthetic",
+  "entries": [
+    {
+      "item_id": "AS-SURV-001",
+      "category": "survey_scope",
+      "review_status": "已复核",
+      "source_locator": "通用调查范围",
+      "source_type": "public_method",
+      "text": "片区调查范围应覆盖现状、问题、资源与意愿四个维度，并与上位规划衔接。"
+    },
+    {
+      "item_id": "AS-SURV-002",
+      "category": "evidence_rule",
+      "review_status": "已复核",
+      "source_locator": "证据留痕",
+      "source_type": "public_method",
+      "text": "每条规范性结论须附来源文件、页码与原文，区分已复核约束与模型推算值。"
+    },
+    {
+      "item_id": "AS-SURV-003",
+      "category": "visual_rule",
+      "review_status": "已复核",
+      "source_locator": "制图规则",
+      "source_type": "public_method",
+      "text": "卫片与GIS图层须使用同一投影变换，禁止非等比例拉伸，视口与画布宽高比相对误差不超过1e-6。"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+# Optional dependencies for building the knowledge base from PDFs (src/build_kb.py).
+# These are NOT required by the workflow engine, knowledge index, or CI tests.
+pypdf>=6.0
+pypdfium2>=5.0
+rapidocr==3.9.1
+onnxruntime>=1.27

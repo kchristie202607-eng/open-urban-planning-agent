@@ -1,0 +1,72 @@
+{
+  "version": "2026-07-30",
+  "name": "片区调查第二章完整工作流",
+  "entry_skill": ".agents/skills/area-survey-chapter2/SKILL.md",
+  "stages": [
+    {
+      "id": "S0",
+      "name": "主稿与范围锁定",
+      "owner": "area_survey_orchestrator",
+      "inputs": ["唯一主稿", "规划范围", "格式母版"],
+      "outputs": ["版本登记", "范围与规模确认"],
+      "gate": "主稿唯一且规划范围可追溯"
+    },
+    {
+      "id": "S1",
+      "name": "证据与数据盘点",
+      "owner": "evidence_retriever",
+      "inputs": ["政策与审查要点", "GIS/CAD/规划图则", "调查问卷", "公共资产资料"],
+      "outputs": ["内部证据清单", "数据口径表", "冲突与待复核清单"],
+      "gate": "正文事实均有内部来源或明确复核状态"
+    },
+    {
+      "id": "S2",
+      "name": "2.1现状概况",
+      "owner": "current_conditions",
+      "outputs": ["2.1正文", "基础数据表", "4张基础图"],
+      "gate": "用地、人口、建筑、产业跨图文表一致"
+    },
+    {
+      "id": "S3",
+      "name": "2.2问题调查与体检评估",
+      "owner": "health_assessment",
+      "outputs": ["问题台账", "五维评估", "重点更新线索"],
+      "gate": "问题数量可复算且长恒花园重点线索完整"
+    },
+    {
+      "id": "S4",
+      "name": "2.3资源与权属",
+      "owner": "resource_ownership",
+      "outputs": ["资源清单", "公产表", "潜力图", "生态图"],
+      "gate": "资源、限制、权属和更新方向逐项对应"
+    },
+    {
+      "id": "S5",
+      "name": "2.4意愿调查",
+      "owner": "stakeholder_intent",
+      "outputs": ["居民商户医院正文", "调查图表", "诉求清单"],
+      "gate": "调查比例、对象与结论一一对应"
+    },
+    {
+      "id": "S6",
+      "name": "专题图与可编辑成果",
+      "owner": "planning_map_cartographer",
+      "outputs": ["PNG/SVG/矢量PDF", "单页可编辑PPT", "map_manifest.json"],
+      "gate": "坐标、拓扑、图号、图名和表达规则通过"
+    },
+    {
+      "id": "S7",
+      "name": "Word装配与局部渲染",
+      "owner": "chapter2_assembler",
+      "outputs": ["第二章DOCX", "图表编号清单", "局部渲染记录"],
+      "gate": "图名下置、无跨页分离、标题和表格格式一致"
+    },
+    {
+      "id": "S8",
+      "name": "成果质检与状态回写",
+      "owner": "quality_reviewer",
+      "outputs": ["quality_report.json", "项目状态更新", "下一步任务"],
+      "gate": "结构、数据、证据、图表、格式全部通过或明确带条件通过"
+    }
+  ]
+}

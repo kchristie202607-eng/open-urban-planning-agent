@@ -1,0 +1,11 @@
+line-length = 100
+
+[lint]
+# Keep ruff focused on real bugs (F) and import hygiene (I).
+# Broad style rules (E/BLE/S) are intentionally not selected; the CI step
+# runs `ruff check . || true` so lint warnings never break the build.
+select = ["F", "I"]
+
+[lint.per-file-ignores]
+# Dev/utility script with intentional broad exception handling.
+"scripts/inspect_git_objects.py" = ["BLE001"]

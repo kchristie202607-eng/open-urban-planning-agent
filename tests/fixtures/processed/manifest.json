@@ -1,0 +1,20 @@
+{
+  "generated_by": "scripts/generate_synthetic_kb.py (synthetic, public)",
+  "documents": [
+    {
+      "document_id": "handbook",
+      "chunk_count": 3,
+      "candidate_count": 2
+    },
+    {
+      "document_id": "guizhou_plan",
+      "chunk_count": 3,
+      "candidate_count": 2
+    },
+    {
+      "document_id": "production_rules_20260730",
+      "chunk_count": 3,
+      "candidate_count": 2
+    }
+  ]
+}

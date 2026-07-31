@@ -1,0 +1,62 @@
+{
+  "updated_at": "2026-07-29",
+  "purpose": "规划分析图绘制能力与Agent路由清单",
+  "available": [
+    {
+      "id": "planning-analysis-map",
+      "type": "codex_skill",
+      "version": "1.0.0",
+      "location": ".agents/skills/planning-analysis-map",
+      "capabilities": ["数据源路由", "栅格配准", "矢量化", "专题制图", "可编辑PPT", "图件QA"]
+    },
+    {
+      "id": "geoagent",
+      "type": "python_agent",
+      "version": "1.8.2",
+      "location": "../.venv-geoagent",
+      "capabilities": ["空间分析任务编排", "GeoPandas生态", "栅格与矢量处理"]
+    },
+    {
+      "id": "geospatial-python-stack",
+      "type": "python_runtime",
+      "location": "../.venv-geoagent",
+      "packages": {
+        "geopandas": "1.0.1",
+        "shapely": "2.1.2",
+        "pyproj": "3.7.0",
+        "rasterio": "1.4.3",
+        "fiona": "1.10.1",
+        "pyogrio": "0.13.0"
+      }
+    },
+    {
+      "id": "geomaster",
+      "type": "codex_skill",
+      "location": "C:/Users/admin/.codex/skills/geomaster",
+      "capabilities": ["GIS分析", "遥感", "空间网络", "空间数据工程"]
+    }
+  ],
+  "conditional": [
+    {
+      "id": "qgis-mcp",
+      "type": "mcp_agent_bridge",
+      "status": "待QGIS桌面端、插件和MCP连接就绪",
+      "repository": "https://github.com/nkarasiak/qgis-mcp",
+      "requirements": ["QGIS >= 3.28", "uv", "QGIS MCP插件", "MCP客户端配置"],
+      "activation_checks": ["ping", "diagnose", "版本一致", "共享令牌"],
+      "security_notes": ["execute_code可执行任意PyQGIS代码", "写操作与覆盖操作需人工复核"]
+    }
+  ],
+  "researched": [
+    {
+      "id": "opengeos-geoagent",
+      "repository": "https://github.com/opengeos/GeoAgent",
+      "decision": "已安装1.8.2，作为Python空间分析编排层"
+    },
+    {
+      "id": "qgis-core",
+      "repository": "https://github.com/qgis/QGIS",
+      "decision": "作为后续桌面制图与PyQGIS执行底座"
+    }
+  ]
+}

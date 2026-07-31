@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.example/schemas/area_survey_project.schema.json",
+  "title": "片区调查第二章项目状态",
+  "type": "object",
+  "required": ["project_id", "updated_at", "master_document", "sections", "open_items"],
+  "properties": {
+    "project_id": {"type": "string"},
+    "updated_at": {"type": "string"},
+    "master_document": {"type": "string"},
+    "status": {"enum": ["drafting", "qa", "conditional_pass", "complete"]},
+    "sections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["section", "status", "evidence_status", "deliverables"],
+        "properties": {
+          "section": {"type": "string"},
+          "status": {"enum": ["not_started", "in_progress", "draft_complete", "qa_passed"]},
+          "evidence_status": {"enum": ["unverified", "partial", "verified"]},
+          "deliverables": {"type": "array", "items": {"type": "string"}},
+          "notes": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    },
+    "open_items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "priority", "owner", "task", "acceptance"],
+        "properties": {
+          "id": {"type": "string"},
+          "priority": {"enum": ["P0", "P1", "P2"]},
+          "owner": {"type": "string"},
+          "task": {"type": "string"},
+          "acceptance": {"type": "string"}
+        }
+      }
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,74 @@
+{
+  "version": "2026-07-30",
+  "workflow": "area-survey-chapter2",
+  "roles": [
+    {
+      "id": "area_survey_orchestrator",
+      "name": "片区调查总控 Agent",
+      "spec": "agents/area_survey_orchestrator.md",
+      "owns": ["版本主线", "任务分派", "章节状态", "交付闸门"]
+    },
+    {
+      "id": "evidence_retriever",
+      "name": "证据检索 Agent",
+      "spec": "agents/evidence_retriever.md",
+      "owns": ["政策证据", "规划依据", "来源定位", "内部引用"]
+    },
+    {
+      "id": "current_conditions",
+      "name": "现状条件 Agent",
+      "spec": "agents/current_conditions.md",
+      "owns": ["2.1现状概况", "基础数据表", "基础图"]
+    },
+    {
+      "id": "health_assessment",
+      "name": "片区体检评估 Agent",
+      "spec": "agents/health_assessment.md",
+      "owns": ["2.2问题调查", "五维体检", "长恒花园重点线索"]
+    },
+    {
+      "id": "resource_ownership",
+      "name": "资源与权属 Agent",
+      "spec": "agents/resource_ownership.md",
+      "owns": ["2.3资源调查", "公共资产", "生态资源"]
+    },
+    {
+      "id": "stakeholder_intent",
+      "name": "意愿调查 Agent",
+      "spec": "agents/stakeholder_intent.md",
+      "owns": ["2.4意愿调查", "问卷图表", "诉求清单"]
+    },
+    {
+      "id": "planning_map_cartographer",
+      "name": "规划分析图制图 Agent",
+      "spec": "agents/planning_map_cartographer.md",
+      "owns": ["GIS图件", "可编辑PPT", "图件清单"]
+    },
+    {
+      "id": "chapter2_assembler",
+      "name": "第二章装配 Agent",
+      "spec": "agents/chapter2_assembler.md",
+      "owns": ["Word装配", "编号格式", "局部渲染"]
+    },
+    {
+      "id": "quality_reviewer",
+      "name": "成果质检 Agent",
+      "spec": "agents/quality_reviewer.md",
+      "owns": ["一致性", "证据链", "图表质量", "交付结论"]
+    }
+  ],
+  "handoffs": [
+    ["area_survey_orchestrator", "evidence_retriever"],
+    ["evidence_retriever", "current_conditions"],
+    ["evidence_retriever", "health_assessment"],
+    ["evidence_retriever", "resource_ownership"],
+    ["evidence_retriever", "stakeholder_intent"],
+    ["current_conditions", "planning_map_cartographer"],
+    ["health_assessment", "planning_map_cartographer"],
+    ["resource_ownership", "planning_map_cartographer"],
+    ["stakeholder_intent", "chapter2_assembler"],
+    ["planning_map_cartographer", "chapter2_assembler"],
+    ["chapter2_assembler", "quality_reviewer"],
+    ["quality_reviewer", "area_survey_orchestrator"]
+  ]
+}
