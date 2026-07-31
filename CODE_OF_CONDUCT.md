@@ -47,7 +47,7 @@ an individual is officially representing the community in public spaces.
 
 Instances of abusive, harassing, or otherwise unacceptable behavior may be
 reported to the community leaders responsible for enforcement at
-**maintainer@example.com** (replace with the maintainer's real contact).
+**106127210@qq.com**.
 All complaints will be reviewed and investigated promptly and fairly.
 
 ## Attribution

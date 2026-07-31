@@ -11,7 +11,7 @@
 If you discover a security vulnerability in OUPAP, please **do not** open a
 public issue. Instead, report it privately to the maintainer:
 
-- Email: **maintainer@example.com** (replace with the real contact)
+- Email: **106127210@qq.com**
 - Or use GitHub's private vulnerability reporting on the repository's
   **Security → Advisories** tab.
 
