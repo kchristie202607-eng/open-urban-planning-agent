@@ -1,5 +1,7 @@
 # Changelog
 
+Release preparation completed locally on 2026-08-03. Publication is pending remote synchronization.
+
 ## v0.1.0-alpha
 
 Initial public foundation release.
