@@ -49,6 +49,9 @@
     },
     "document_status": {
       "type": "string"
+    },
+    "metadata": {
+      "$ref": "./common_metadata.schema.json"
     }
   },
   "additionalProperties": false

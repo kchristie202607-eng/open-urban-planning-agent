@@ -1,0 +1,25 @@
+name: Documentation
+description: Improve public OUPAP documentation
+title: "[Docs] "
+labels: ["documentation", "triage"]
+body:
+  - type: textarea
+    id: gap
+    attributes:
+      label: Documentation gap
+      description: Describe what public documentation is missing or unclear.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed improvement
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy confirmation
+      options:
+        - label: This request uses only public or synthetic information and contains no project data.
+          required: true

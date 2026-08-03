@@ -111,6 +111,9 @@
     },
     "review_notes": {
       "type": ["string", "null"]
+    },
+    "metadata": {
+      "$ref": "./common_metadata.schema.json"
     }
   },
   "additionalProperties": false

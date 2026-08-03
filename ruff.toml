@@ -3,7 +3,7 @@ line-length = 100
 [lint]
 # Keep ruff focused on real bugs (F) and import hygiene (I).
 # Broad style rules (E/BLE/S) are intentionally not selected; the CI step
-# runs `ruff check . || true` so lint warnings never break the build.
+# treats the selected correctness and import checks as blocking.
 select = ["F", "I"]
 
 [lint.per-file-ignores]

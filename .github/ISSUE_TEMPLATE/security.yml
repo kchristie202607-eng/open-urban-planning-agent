@@ -1,0 +1,15 @@
+name: Security report
+description: Report a security concern privately
+title: "[Security] "
+labels: ["security"]
+body:
+  - type: markdown
+    attributes:
+      value: "Do not disclose vulnerability details publicly. Use the private reporting channel in SECURITY.md instead."
+  - type: textarea
+    id: confirmation
+    attributes:
+      label: Confirmation
+      description: Confirm that you have used the private security reporting channel.
+    validations:
+      required: true
