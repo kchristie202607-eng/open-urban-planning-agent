@@ -58,8 +58,17 @@ python -m oupap run --input examples/demo_project.json --output output/demo
 ├── examples/            # 合成示例输入（公共，仅合成数据）
 ├── tests/               # 验收测试（公共）
 ├── docs/                # 文档（公共）
+│   └── methodology/     # 行业方法论文档集（公共，已脱敏）
 └── README.md            # 本文件
 ```
+
+## 行业方法论文档
+
+除框架本身，本仓库还开放一层**方法论**资产——即"怎么做"的行业知识：CAD 图纸转 GIS 的坐标与单位陷阱、MapGIS 交付与报错治理、用地用色国标与符号化、道路红线闭合构面、离线 OCR 与引用核验阶梯、行政/开发边界统计口径、成果图片管理、政府汇报与技术标框架等。
+
+这类知识的价值在于：它不含任何具体项目的位置、面积、权属与结论，却是规划从业者最难自行摸索的部分。
+
+入口：[`docs/methodology/`](./docs/methodology/README.md)
 
 ## 贡献
 
