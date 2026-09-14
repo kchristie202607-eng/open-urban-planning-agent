@@ -1,6 +1,6 @@
 # Changelog
 
-Release preparation completed locally on 2026-08-03. Publication is pending remote synchronization.
+Release preparation completed and published to GitHub via SSH on 2026-08-03.
 
 ## v0.1.0-alpha
 

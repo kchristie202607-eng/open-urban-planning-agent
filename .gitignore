@@ -1,15 +1,32 @@
 # ===== OUPAP .gitignore =====
 # Goal: keep the repository PUBLIC and FREE of any private / confidential content.
 # Public framework only. Project data, knowledge bases, and credentials never leave the machine.
+#
+# ⚠️ IMPORTANT — do NOT write trailing comments on pattern lines.
+# Git does not support end-of-line comments: "data/   # private note" is parsed as a
+# SINGLE pattern and the rule silently fails. Every explanatory comment must sit on
+# its OWN line above the pattern.
 
 # ---- Private / sensitive (MUST NOT be published) ----
-data/                  # knowledge base sqlite + processed chunks (private)
-output/                # generated planning deliverables (project-specific)
-project_state/         # current project state artifacts
-backups/               # snapshots
-tmp/                   # working files
-.workbuddy/            # agent/local memory
-.deps/                 # local python environment (3rd-party licenses only)
+
+# knowledge base sqlite + processed chunks (private)
+data/
+# generated planning deliverables (project-specific)
+output/
+# current project state artifacts
+project_state/
+# snapshots
+backups/
+# working files
+tmp/
+# agent / local memory
+.workbuddy/
+# local python environment (3rd-party licenses only)
+.deps/
+# push/SSH diagnostics — internal operations record, contains local machine paths
+AUDIT/
+# internal work log, not part of the public framework
+WORK_LOG.md
 
 # ---- Python ----
 __pycache__/
